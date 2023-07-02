@@ -6,7 +6,7 @@ const AuthPage = (props) => {
       axios.post('http://localhost:7000/authenticate',{
         username:value
       }).then((response)=>{
-
+        console.log(response);
           props.onAuth({ ...response.data, secret: value });
       }).then(e=>console.log('error',e))
     };
